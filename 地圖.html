@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地圖</title>
+    <style>
+        /* 容器，利用彈性盒子模型 */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 設置容器高度為視窗高度 */
+        }
+
+        /* 地圖容器 */
+        .map {
+            width: 600px; /* 調整地圖的寬度 */
+            height: 400px; /* 調整地圖的高度 */
+            background-color: #c0c0c0; /* 假設地圖的顏色 */
+            position: relative; /* 使店家可以根據地圖定位 */
+        }
+
+        /* 中庭樣式 */
+        .courtyard {
+            width: 100px; /* 調整中庭的寬度 */
+            height: 100px; /* 調整中庭的高度 */
+            background-color: #ffd700; /* 假設中庭的顏色 */
+            position: absolute; /* 相對於地圖定位 */
+            top: 50%; /* 讓中庭垂直置中 */
+            left: 50%; /* 讓中庭水平置中 */
+            transform: translate(-50%, -50%); /* 使用 transform 屬性來水平和垂直置中 */
+            border-radius: 10px; /* 圓角 */
+            z-index: 999; /* 確保中庭在店家的下方 */
+        }
+
+        /* 店家的樣式 */
+        .shop {
+            width: calc(25% - 10px); /* 調整店家的寬度，並考慮間隔 */
+            height: calc(33.33% - 10px); /* 調整店家的高度，並考慮間隔 */
+            background-color: #ff0000; /* 假設店家的顏色 */
+            position: absolute; /* 相對於地圖定位 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff; /* 文字顏色 */
+            font-weight: bold; /* 加粗文字 */
+            margin: 5px; /* 設置店家之間的間隔 */
+        }
+
+        /* 廣場的樣式 */
+        .plaza {
+            width: 50%; /* 調整廣場的寬度 */
+            height: 50%; /* 調整廣場的高度 */
+            background-color: #008000; /* 假設廣場的顏色 */
+            position: absolute; /* 相對於地圖定位 */
+            left: 25%; /* 調整廣場的位置 */
+            top: 25%; /* 調整廣場的位置 */
+            z-index: 999; /* 確保廣場在店家的上方 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="map">
+            <!-- 店家 -->
+            <div class="shop" style="top: 0; left: 0;">1</div>
+            <div class="shop" style="top: 0; left: 25%;">2</div>
+            <div class="shop" style="top: 0; left: 50%;">3</div>
+            <div class="shop" style="top: 0; left: 75%;">4</div>
+            <div class="shop" style="top: 33.33%; left: 0;">5</div>
+            <div class="shop" style="top: 33.33%; left: 25%;">6</div>
+            <div class="shop" style="top: 33.33%; left: 50%;">7</div>
+            <div class="shop" style="top: 33.33%; left: 75%;">8</div>
+            <div class="shop" style="top: 66.66%; left: 0;">9</div>
+            <div class="shop" style="top: 66.66%; left: 25%;">10</div>
+            <div class="shop" style="top: 66.66%; left: 50%;">11</div>
+            <div class="shop" style="top: 66.66%; left: 75%;">12</div>
+            
+            <!-- 中庭 -->
+            <div class="courtyard"></div>
+
+            <!-- 廣場 -->
+            <div class="plaza"></div>
+        </div>
+    </div>
+</body>
+</html>
